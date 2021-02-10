@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder>{
@@ -47,6 +49,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         holder.tvReleaseDate.setText(movie.get(1));
         holder.tvVote.setText(movie.get(3));
         holder.tvOverview.setText(movie.get(4));
+        Picasso.get().load("https://image.tmdb.org/t/p/w500" + movie.get(2)).into(holder.ivMovie);
     }
 
     @Override
